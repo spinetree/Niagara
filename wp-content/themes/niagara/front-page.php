@@ -72,25 +72,20 @@ get_header(); ?>
                             <p>"Once I started the book I could not put it down. ... her descriptions of the Niagara area and the weaving of her story, so enjoyable."</p>
                             <p>-- Rose</p>
                         </div>
-                        
+
                         <div class="sliderItem">
-                            <p>""</p>
-                            <p>-- </p>
+                            <p>"Over a period of 47 years we visited Niagara Falls at least twice each year so [your book] brought back many happy memories."</p>
+                            <p>-- Pat, Michigan</p>
                         </div>
 
                         <div class="sliderItem">
-                            <p>""</p>
-                            <p>-- </p>
-                        </div>
-                        
-                        <div class="sliderItem">
-                            <p>""</p>
-                            <p>-- </p>
+                            <p>"... a nice blend of history both long past and present blended so well with an interesting story ... very suspenseful and exciting finish."</p>
+                            <p>-- Tom, Youngstown, NY</p>
                         </div>
 
                         <div class="sliderItem">
-                            <p>""</p>
-                            <p>-- </p>
+                            <p>"Really enjoyed it, even beyond the local history and landmarks. I was sad to finish it</p>
+                            <p>-- Phil, New York, NY</p>
                         </div>
 
                     </div>
@@ -101,40 +96,37 @@ get_header(); ?>
             <section class="news">
 
                 <h2 class="banner">
-                    <span class="left"></span>
-                        Latest News &amp; Events
+                    <span class="left"></span> Latest News &amp; Events
                     <span class="right"></span>
                 </h2>
 
                 <div class="content flexbox">
-                    <?php 
-                        
+                    <?php                    
                         //hit db for posts
                         query_posts( 'cat=3&posts_per_page=2' );
-
                         // Start the Loop.
                         while ( have_posts() ) : the_post(); ?>
 
-                        <article id="post-<?php the_ID(); ?>">
+                    <article id="post-<?php the_ID(); ?>">
 
-                            <header class="entry-header">
-                                <?php the_title( sprintf( '<h4 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h4>' ); ?>
-                            </header>
+                        <header class="entry-header">
+                            <?php the_title( sprintf( '<h4 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h4>' ); ?>
+                        </header>
 
-                            <div class="flexbox">
-                                <div class="excerpt">
-                                    <?php the_excerpt();?>
-                                </div>
-
-                                <div class="morelink linkbutton">
-                                    <a href=" <?php echo esc_url( get_permalink() );?> ">Full Article</a>
-                                </div>
+                        <div class="flexbox">
+                            <div class="excerpt">
+                                <?php the_excerpt();?>
                             </div>
 
-                        </article>
-                        <!-- #post-## -->
+                            <div class="morelink linkbutton">
+                                <a href=" <?php echo esc_url( get_permalink() );?> ">Full Article</a>
+                            </div>
+                        </div>
 
-                        <?	endwhile;
+                    </article>
+                    <!-- #post-## -->
+
+                    <?	endwhile;
                             ?>
                 </div>
 
